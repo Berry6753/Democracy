@@ -57,7 +57,7 @@ public class BossMonster : MonoBehaviour
         }
 
     }
-    private int lastWave = 29;
+    private int lastWave;
 
     private Transform Core;
     private Transform Player;
@@ -133,6 +133,8 @@ public class BossMonster : MonoBehaviour
         stateMachine.InitState(State.IDLE);
 
         amongRange = (attackRange + specialAttackRange) / 2;
+
+        lastWave = GameManager.Instance.WaveSystem.LastWave - 1;
     }
     private void OnEnable()
     {

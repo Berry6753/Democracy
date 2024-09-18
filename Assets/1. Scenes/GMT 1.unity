@@ -495,82 +495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608005d0e0d28bd4f8d9db7f990b35a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  breakTime: 60
   waves:
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
-  - spawnTime: 0
-    maxMonsterCount: 
-    monsterPrefab: []
   - spawnTime: 0
     maxMonsterCount: 
     monsterPrefab: []
@@ -593,6 +519,8 @@ MonoBehaviour:
   - {fileID: 7408092878229374756, guid: 3a009058bf79d904d881c0a387e43a9a, type: 3}
   - {fileID: 1963476244292297367, guid: 1f9d41e2cc4a48e49b48aa960b1fb49e, type: 3}
   - {fileID: 7942864211657280271, guid: 9f563251ac99ad74f93f56d4ee4b5ab0, type: 3}
+  isWave: 0
+  checkTime: 0
   WaveCount_Text: {fileID: 1257360954}
   WaveTimer: {fileID: 1893216601}
 --- !u!4 &54409678
@@ -6470,6 +6398,7 @@ MonoBehaviour:
   - {fileID: 1708846938}
   - {fileID: 2139318370}
   - {fileID: 465994862}
+  spawnRange: 0
 --- !u!4 &745813445
 Transform:
   m_ObjectHideFlags: 0
@@ -15572,6 +15501,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2037304013}
+    - target: {fileID: 1786982130545928769, guid: f22eb33820eadd742a1f8da3df65da75, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -29.999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786982130579536584, guid: f22eb33820eadd742a1f8da3df65da75, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -29.999878
+      objectReference: {fileID: 0}
     - target: {fileID: 1786982130744155875, guid: f22eb33820eadd742a1f8da3df65da75, type: 3}
       propertyPath: m_Name
       value: StartMenu
@@ -15664,10 +15601,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2037304013}
+    - target: {fileID: 1786982131019105538, guid: f22eb33820eadd742a1f8da3df65da75, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -29.999878
+      objectReference: {fileID: 0}
     - target: {fileID: 1786982131234609124, guid: f22eb33820eadd742a1f8da3df65da75, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2037304013}
+    - target: {fileID: 1786982131234609125, guid: f22eb33820eadd742a1f8da3df65da75, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -29.999878
+      objectReference: {fileID: 0}
     - target: {fileID: 1786982131375695477, guid: f22eb33820eadd742a1f8da3df65da75, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -15792,8 +15737,10 @@ MonoBehaviour:
   coreUI: {fileID: 1290434124}
   spawnPoint: {fileID: 1653805106}
   startUI: {fileID: 1795878657}
+  playOj: {fileID: 0}
   pauseUI: {fileID: 1172069472}
   waveSystem: {fileID: 54409677}
+  monsterSpawner: {fileID: 0}
   RecordText:
   - {fileID: 1766134121}
   - {fileID: 190346429}
@@ -15803,6 +15750,10 @@ MonoBehaviour:
   - {fileID: 2042577970}
   boss: {fileID: 0}
   sound: {fileID: 0}
+  clear: {fileID: 0}
+  over: {fileID: 0}
+  monsterCrystalLast: {fileID: 0}
+  monsterCrystal: []
   isGameStop: 0
 --- !u!114 &2037304014
 MonoBehaviour:
@@ -15913,6 +15864,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9fab3ec2-6db2-4dbd-920d-f99996de31db
     m_ActionName: GameStop/GameStop[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70cf7c34-6a14-4517-a167-ce996cd57ebc
+    m_ActionName: GameStop/WaveSkip[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GameStop

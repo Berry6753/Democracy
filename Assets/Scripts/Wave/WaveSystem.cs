@@ -1,14 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System.Threading;
 
 public class WaveSystem : MonoBehaviour
 {
-    private static int maxWave = 29;
+    private static int maxWave = 6;
     public float breakTime = 60.0f;
     [SerializeField] private Wave[] waves = new Wave[maxWave];               //현재 웨이브 정보
     public MonsterSpawner monsterSpawner;
@@ -20,7 +15,7 @@ public class WaveSystem : MonoBehaviour
     public int currentWaveIndex = 0;
 
     [SerializeField]
-    private GameObject[] monster = new GameObject[4];
+    private GameObject[] monster = new GameObject[5];
 
     NormalMonster normal;
     AerialMonster aerial;
@@ -40,6 +35,13 @@ public class WaveSystem : MonoBehaviour
 
     public float PlayTimer { get; private set; }
 
+    public int LastWave { get { return monster.Length; } }
+
+    private int normalMonsterCount = 8;
+    private int AerialMonsterCount = 3;
+    private int SiegeMonsterCount = 4;
+    private int SuicideMonsterCount = 5;
+
     private void OnEnable()
     {
         for (int i = 0; i < waves.Length; i++)
@@ -57,31 +59,37 @@ public class WaveSystem : MonoBehaviour
             for (int k = 0; k < waves.Length; k++)
             {
                 waves[k].monsterPrefab[i] = monster[i];
-                if (k >= 0 && k < 10)
-                {
-                    waves[k].maxMonsterCount[0] = normal.startSpawnNum;
-                    waves[k].maxMonsterCount[1] = aerial.startSpawnNum;
-                    waves[k].maxMonsterCount[2] = 0;
-                    waves[k].maxMonsterCount[3] = suicide.startSpawnNum;
-                    if (k >= 5)
-                    {
-                        waves[k].maxMonsterCount[2] = siege.startSpawnNum;
-                    }
-                }
-                else if (k >= 10 && k < 20)
-                {
-                    waves[k].maxMonsterCount[0] = normal.startSpawnNum + normal.upScaleSpwanNum;
-                    waves[k].maxMonsterCount[1] = aerial.startSpawnNum + aerial.upScaleSpwanNum;
-                    waves[k].maxMonsterCount[2] = siege.startSpawnNum + siege.upScaleSpwanNum;
-                    waves[k].maxMonsterCount[3] = suicide.startSpawnNum + siege.upScaleSpwanNum;
-                }
-                else if (k >= 20 && k < waves.Length)
-                {
-                    waves[k].maxMonsterCount[0] = normal.startSpawnNum + normal.upScaleSpwanNum * 2;
-                    waves[k].maxMonsterCount[1] = aerial.startSpawnNum + aerial.upScaleSpwanNum * 2;
-                    waves[k].maxMonsterCount[2] = siege.startSpawnNum + siege.upScaleSpwanNum * 2;
-                    waves[k].maxMonsterCount[3] = suicide.startSpawnNum + siege.upScaleSpwanNum * 2;
-                }
+
+                waves[k].maxMonsterCount[0] = normalMonsterCount + k * 2;
+                waves[k].maxMonsterCount[1] = k >= 1 ? AerialMonsterCount + (k * 3) : 0;
+                waves[k].maxMonsterCount[2] = k >= 2 ? SiegeMonsterCount + (k - 1) : 0;
+                waves[k].maxMonsterCount[3] = k >= 3 ? SuicideMonsterCount + (k - 2) * 5 : 0;
+
+                //if (k >= 0 && k < 10)
+                //{
+                //    waves[k].maxMonsterCount[0] = normal.startSpawnNum;
+                //    waves[k].maxMonsterCount[1] = aerial.startSpawnNum;
+                //    waves[k].maxMonsterCount[2] = 0;
+                //    waves[k].maxMonsterCount[3] = suicide.startSpawnNum;
+                //    if (k >= 5)
+                //    {
+                //        waves[k].maxMonsterCount[2] = siege.startSpawnNum;
+                //    }
+                //}
+                //else if (k >= 10 && k < 20)
+                //{
+                //    waves[k].maxMonsterCount[0] = normal.startSpawnNum + normal.upScaleSpwanNum;
+                //    waves[k].maxMonsterCount[1] = aerial.startSpawnNum + aerial.upScaleSpwanNum;
+                //    waves[k].maxMonsterCount[2] = siege.startSpawnNum + siege.upScaleSpwanNum;
+                //    waves[k].maxMonsterCount[3] = suicide.startSpawnNum + siege.upScaleSpwanNum;
+                //}
+                //else if (k >= 20 && k < waves.Length)
+                //{
+                //    waves[k].maxMonsterCount[0] = normal.startSpawnNum + normal.upScaleSpwanNum * 2;
+                //    waves[k].maxMonsterCount[1] = aerial.startSpawnNum + aerial.upScaleSpwanNum * 2;
+                //    waves[k].maxMonsterCount[2] = siege.startSpawnNum + siege.upScaleSpwanNum * 2;
+                //    waves[k].maxMonsterCount[3] = suicide.startSpawnNum + siege.upScaleSpwanNum * 2;
+                //}
             }
         }
         currentWaveIndex = 0;

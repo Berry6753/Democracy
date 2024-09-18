@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.IO;
-using Unity.VisualScripting;
 using TMPro;
 using Newtonsoft.Json;
 using System.Linq;

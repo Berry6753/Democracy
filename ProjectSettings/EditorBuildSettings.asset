@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GMT.unity
+    path: Assets/1. Scenes/GMT.unity
     guid: da1c9d641de3780468d2250a7cdb67bf
   m_configObjects: {}
