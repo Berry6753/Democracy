@@ -69,7 +69,7 @@ public class GameManager : Singleton<GameManager>
     public float isGameStop;
     public bool isGameOver { get; private set; }
     public bool isGameClear { get; private set; }
-    private Player_Info playerInfo;
+    [HideInInspector] public Player_Info playerInfo;
     private Player_Command Player_Command;
 
     public GameObject GetPlayer {  get { return Player; } }

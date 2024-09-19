@@ -168,6 +168,7 @@ public class WaveSystem : MonoBehaviour
             if (monsterSpawner.MonsterList.Count == 0 && currentWaveIndex < waves.Length)
             {
                 WaveTimer.transform.parent.gameObject.SetActive(true);
+                GameManager.Instance.playerInfo.AddGearCount(300);
                 checkTime -= Time.deltaTime;
                 if (checkTime <= 0)
                 {
