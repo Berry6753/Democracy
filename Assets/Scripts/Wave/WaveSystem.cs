@@ -42,6 +42,8 @@ public class WaveSystem : MonoBehaviour
     private int SiegeMonsterCount = 4;
     private int SuicideMonsterCount = 5;
 
+    public bool isEndWave = false;
+
     private void OnEnable()
     {
         for (int i = 0; i < waves.Length; i++)
@@ -168,7 +170,10 @@ public class WaveSystem : MonoBehaviour
             if (monsterSpawner.MonsterList.Count == 0 && currentWaveIndex < waves.Length)
             {
                 WaveTimer.transform.parent.gameObject.SetActive(true);
-                GameManager.Instance.playerInfo.AddGearCount(300);
+                if (checkTime == breakTime)
+                {
+                    GameManager.Instance.playerInfo.AddGearCount(300);
+                }
                 checkTime -= Time.deltaTime;
                 if (checkTime <= 0)
                 {
