@@ -233,7 +233,7 @@ public class Core : MonoBehaviour
     {
         commandDic.Add((int)PlayerSkillName.BARRICATE, new int[4] { 2, 4, 2, 4 });
         commandDic.Add((int)PlayerSkillName.HEALLING, new int[4] { 2, 2, 2, 1 });
-        commandDic.Add((int)PlayerSkillName.NUKE, new int[4] { 1, 1, 1, 2 });
+        commandDic.Add((int)PlayerSkillName.NUKE, new int[4] { 1, 1, 1, 4 });
 
     }
 
