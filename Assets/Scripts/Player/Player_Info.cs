@@ -118,7 +118,7 @@ public class Player_Info : MonoBehaviour
         isDead = false;
         animator.SetBool(hashDead, false);
 
-        GearCount = 100;
+        GearCount = 300;
         UI.InitGearText(GearCount);
 
         Spawn();

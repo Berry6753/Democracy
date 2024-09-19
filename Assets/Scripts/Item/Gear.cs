@@ -20,11 +20,11 @@ public class Gear : MonoBehaviour
     private void OnEnable()
     {
         int GearRandom = Random.Range(0, 100);
-        if (GearRandom < 60) GearCount = 1f;
-        else if (GearRandom < 80) GearCount = 2f;
-        else if (GearRandom < 92) GearCount = 3f;
-        else if (GearRandom < 97) GearCount = 4f;
-        else GearCount = 5f;
+        if (GearRandom < 60) GearCount = 10f;
+        else if (GearRandom < 80) GearCount = 20f;
+        else if (GearRandom < 92) GearCount = 30f;
+        else if (GearRandom < 97) GearCount = 40f;
+        else GearCount = 50f;
 
         body.useGravity = true;
     }
