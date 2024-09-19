@@ -134,7 +134,7 @@ public class BossMonster : MonoBehaviour
 
         amongRange = (attackRange + specialAttackRange) / 2;
 
-        lastWave = GameManager.Instance.WaveSystem.LastWave - 1;
+        lastWave = GameManager.Instance.WaveSystem.LastWave;
     }
     private void OnEnable()
     {

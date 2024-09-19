@@ -37,8 +37,8 @@ public class WaveSystem : MonoBehaviour
 
     public int LastWave { get { return monster.Length; } }
 
-    private int normalMonsterCount = 8;
-    private int AerialMonsterCount = 3;
+    private int normalMonsterCount = 20;
+    private int AerialMonsterCount = 10;
     private int SiegeMonsterCount = 4;
     private int SuicideMonsterCount = 5;
 
@@ -60,8 +60,8 @@ public class WaveSystem : MonoBehaviour
             {
                 waves[k].monsterPrefab[i] = monster[i];
 
-                waves[k].maxMonsterCount[0] = normalMonsterCount + k * 2;
-                waves[k].maxMonsterCount[1] = k >= 1 ? AerialMonsterCount + (k * 3) : 0;
+                waves[k].maxMonsterCount[0] = normalMonsterCount + k * 8;
+                waves[k].maxMonsterCount[1] = k >= 1 ? AerialMonsterCount + (k * 5) : 0;
                 waves[k].maxMonsterCount[2] = k >= 2 ? SiegeMonsterCount + (k - 1) : 0;
                 waves[k].maxMonsterCount[3] = k >= 3 ? SuicideMonsterCount + (k - 2) * 5 : 0;
 
