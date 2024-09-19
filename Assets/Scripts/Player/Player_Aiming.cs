@@ -356,6 +356,11 @@ public class Player_Aiming : MonoBehaviour
             }
 
         }
+        else
+        {
+            var cameraTransform = Camera.main.transform;
+            debugTransform.position = cameraTransform.position + cameraTransform.forward * 30f;
+        }
     }
 
     private void FireGun()
