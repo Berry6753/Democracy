@@ -50,9 +50,10 @@ public class SuicideMonster : Monster
         while (!isDead)
         {
             yield return new WaitForSeconds(0.3f);
-            if (state == State.DIE)
+            if (hp <= 0)
             {
                 stateMachine.ChangeState(State.DIE);
+                isDie();
                 yield break;
             }
 
