@@ -218,7 +218,7 @@ public abstract class Turret : MonoBehaviour
 
     private void UpgradeCheck()
     {
-        if (!isRepair || nowUpgradeCount >= maxUpgradeCount)
+        if (!isRepair || nowUpgradeCount >= maxUpgradeCount-1)
         {
             isUpgrade = false;
         }
@@ -382,6 +382,8 @@ public abstract class Turret : MonoBehaviour
         //업그레이드시 외형변경
         headMeshFilter.mesh = turretHeadMesh[nowUpgradeCount];
         bodyMeshFilter.mesh = turretBodyMesh[nowUpgradeCount];
+
+        Debug.Log($"{transform.name} : {nowUpgradeCount} : {maxUpgradeCount}");
     }
 
     public void Repair()

@@ -189,7 +189,7 @@ public class GameManager : Singleton<GameManager>
         dataList.Add(data);
         dataList = dataList.OrderByDescending(x => x.waveCount).ThenBy(x => x.playTime).ToList();
 
-        Debug.Log(dataList.Count);
+        //Debug.Log(dataList.Count);
 
         string jsonData = JsonConvert.SerializeObject(dataList);/*JsonUtility.ToJson(dataList);*/
 

@@ -60,7 +60,7 @@ public class MissleTurret : Turret
 
         if (Physics.Raycast(firePos.transform.position, targetTransform.position - firePos.transform.position,out RaycastHit hit, missleTurretAttackRange,~(ignoreLayer)))
         {
-            if (!hit.collider.CompareTag("Monster"))
+            if (!hit.collider.CompareTag("Monster") && !hit.collider.CompareTag("Boss"))
             {
                 targetIndex++;
                 return;

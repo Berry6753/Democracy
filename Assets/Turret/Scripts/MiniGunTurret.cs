@@ -43,7 +43,7 @@ public class MiniGunTurret : Turret
         if (Physics.Raycast(firePos.transform.position, targetTransform.position - firePos.transform.position, out RaycastHit hit, miniGunAttackRange,~(ignoreLayer)))
         {
             
-            if (!hit.collider.CompareTag("Monster"))
+            if (!hit.collider.CompareTag("Monster") && !hit.collider.CompareTag("Boss"))
             {
                 targetIndex++;
                 return;
@@ -67,7 +67,7 @@ public class MiniGunTurret : Turret
                 {
                     hit.collider.gameObject.GetComponent<BossMonster>().Hurt(base.turretAttackDamge);
                 }
-                Debug.Log("연사 터렛 공격");
+                //Debug.Log("연사 터렛 공격");
 
 
             }

@@ -47,7 +47,7 @@ public class SnipeTurret : Turret
 
         if (Physics.Raycast(firePos.transform.position, fireEffectPos.transform.position - firePos.transform.position,out RaycastHit hit, snipeTurretAttackRange,~(ignoreLayer)))
         {
-            if (!hit.collider.CompareTag("Monster"))
+            if (!hit.collider.CompareTag("Monster") && !hit.collider.CompareTag("Boss"))
             {
                 targetIndex++;
                 return;

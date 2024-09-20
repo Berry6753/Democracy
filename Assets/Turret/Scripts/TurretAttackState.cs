@@ -57,6 +57,7 @@ public class TurretAttackState : TurretBaseState
         {
             
             turret.Attack();
+            Debug.Log($"{turret.turretTargetTransform.name} : АјАн");
             
             attackCheckTime = 0;
         }

@@ -316,9 +316,9 @@ public class Player_Aiming : MonoBehaviour
 
             if (Physics.Raycast(GunFireStartPoint.position, (hit.point - GunFireStartPoint.position + new Vector3(errorRange_x, errorRange_y, errorRange_z)).normalized, out RaycastHit hits, 30f, FireColliderLayerMask))
             {                
-                Debug.DrawLine(GunFireStartPoint.position, hits.point, Color.red);
+                //Debug.DrawLine(GunFireStartPoint.position, hits.point, Color.red);
 
-                Debug.Log(hits.transform.gameObject.name);
+                //Debug.Log(hits.transform.gameObject.name);
                 //데미지 부여
                 if (hits.transform.gameObject.layer == LayerMask.NameToLayer("Monster"))
                 {
@@ -431,8 +431,8 @@ public class Player_Aiming : MonoBehaviour
         animator.SetBool(hashReload, false);
         notAimingTimer = 0;
         UI.Reload(info.equipedBulletCount, info.magazineCount);
-        Debug.Log("장전 종료...");
-        Debug.Log($"탄 수 : {info.equipedBulletCount}, 탄창 수 : {info.magazineCount}");
+        //Debug.Log("장전 종료...");
+        //Debug.Log($"탄 수 : {info.equipedBulletCount}, 탄창 수 : {info.magazineCount}");
     }
 
     public void Reloading()

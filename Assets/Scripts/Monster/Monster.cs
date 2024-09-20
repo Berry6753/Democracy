@@ -156,7 +156,7 @@ public abstract class Monster : MonoBehaviour
     protected virtual void Update()
     {
         //ReTargeting();
-        Debug.Log($"{gameObject.name}가 노리는 목표 : {chaseTarget.name}");
+        //Debug.Log($"{gameObject.name}가 노리는 목표 : {chaseTarget.name}");
 
         if (time > 0 && !anim.GetBool("isAttack"))
         {
