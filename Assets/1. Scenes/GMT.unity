@@ -5429,6 +5429,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SubUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8725900986419322290, guid: cf1a31a4bd8240040832cf2e3636d16d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8725900986419322295, guid: cf1a31a4bd8240040832cf2e3636d16d, type: 3}
       propertyPath: m_Pivot.x
       value: 0

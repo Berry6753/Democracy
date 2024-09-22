@@ -26,7 +26,7 @@ public class Reload_UI_DataUpdate : MonoBehaviour
         if (gameObject.activeSelf)
         {
             Bullet_Text.text = $"{player.equipedBulletCount} / {player.maxEquipedBulletCount}";
-            Magazine_Text.text = $"{player.magazineCount} / {player.maxEquipedBulletCount}";
+            Magazine_Text.text = $"{player.magazineCount} / {player.maxMagazineCount}";
         }
     }
 }
