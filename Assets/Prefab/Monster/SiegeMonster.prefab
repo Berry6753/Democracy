@@ -2599,7 +2599,7 @@ MonoBehaviour:
   startSpawnNum: 2
   upScaleSpwanNum: 2
   spawnTiming: 5
-  sensingRange: 0
+  sensingRange: 30
   turretLayer:
     serializedVersion: 2
     m_Bits: 64
