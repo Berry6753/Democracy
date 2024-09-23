@@ -11,11 +11,6 @@ public class SiegeMonster : Monster
         base.Awake();
         defaultTarget = GameObject.FindWithTag("Core").GetComponent<Transform>();
     }
-    private void Start()
-    {
-        chaseTarget = defaultTarget;
-        ChaseTarget();
-    }
 
     protected override void OnEnable()
     {

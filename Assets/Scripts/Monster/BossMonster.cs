@@ -469,6 +469,11 @@ public class BossMonster : MonoBehaviour
         //    }
         //}
 
+        if (chaseTarget.gameObject.activeSelf == false)
+        {
+            chaseTarget = GameManager.Instance.GetPlayer.transform;
+        }
+
         foreach (Collider target in Targets)
         {
             if (target.gameObject.layer == LayerMask.NameToLayer("Turret"))
