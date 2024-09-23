@@ -478,6 +478,8 @@ public class BossMonster : MonoBehaviour
         {
             if (target.gameObject.layer == LayerMask.NameToLayer("Turret"))
             {
+                if (target.gameObject.CompareTag("Barrel")) continue;
+
                 targetList.Add(target.gameObject);
             }
         }

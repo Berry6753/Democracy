@@ -2560,7 +2560,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963476244292297367}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.6
   m_Speed: 3
@@ -2862,6 +2862,7 @@ GameObject:
   - component: {fileID: 2172213854606806647}
   - component: {fileID: 2823548558891218497}
   - component: {fileID: 738883788131531147}
+  - component: {fileID: 5092486176316723992}
   m_Layer: 9
   m_Name: CheckZone
   m_TagString: Untagged
@@ -2909,3 +2910,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89472aef207ee154e8f76888239847d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &5092486176316723992
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201201987645374254}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
