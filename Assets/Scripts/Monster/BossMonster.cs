@@ -157,7 +157,12 @@ public class BossMonster : MonoBehaviour
         {
             boss_HP_UI.SetActive(true);
         }
-    
+
+        foreach (var list in targetList)
+        { 
+            if (!list.activeSelf) targetList.Remove(list);
+        }
+
         //老矫利栏肺 林籍贸府
 
         if (time > 0 && !anim.GetBool("isAttack"))
@@ -410,7 +415,7 @@ public class BossMonster : MonoBehaviour
 
 
 
-            rb.AddForce(dashDir * 150f, ForceMode.Acceleration);
+            rb.AddForce(dashDir * 50f, ForceMode.Acceleration);
             dashTime += Time.deltaTime;
             if (dashTime > 2f)
             {
