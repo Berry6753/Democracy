@@ -149,6 +149,10 @@ public class BossMonster : MonoBehaviour
         isDead = false;
         boss_HP_UI.SetActive(false);
         StartCoroutine(BossState());
+        foreach (SkinnedMeshRenderer skin in renderer)
+        {
+            skin.material.color = new Color(1, 1, 1, 1);
+        }
     }
 
     private void Update()
@@ -558,6 +562,20 @@ public class BossMonster : MonoBehaviour
         {
             hp -= damage;
             hp = Mathf.Clamp(hp, 0, maxHp);
+        }
+        StartCoroutine(OnDamaged());
+    }
+
+    private IEnumerator OnDamaged()
+    {
+        foreach (SkinnedMeshRenderer skin in renderer)
+        {
+            skin.material.color = new Color(0, 0, 0, 1);
+        }
+        yield return new WaitForSeconds(0.2f);
+        foreach (SkinnedMeshRenderer skin in renderer)
+        {
+            skin.material.color = new Color(1, 1, 1, 1); 
         }
     }
 

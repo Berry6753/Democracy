@@ -83,6 +83,7 @@ public abstract class Monster : MonoBehaviour
     protected Animator anim;
     protected StateMachine stateMachine;
     protected CapsuleCollider capsuleCollider;
+    protected SkinnedMeshRenderer[] skin;
 
     protected readonly int hashTrace = Animator.StringToHash("isTrace");
     protected readonly int hashAttack = Animator.StringToHash("isAttack");
@@ -117,6 +118,7 @@ public abstract class Monster : MonoBehaviour
         obstacle = GetComponent<NavMeshObstacle>();
         anim = GetComponent<Animator>();
         attack = GetComponentsInChildren<SphereCollider>();
+        skin = GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (Collider c in attack)
         {
             c.enabled = false;
@@ -151,6 +153,10 @@ public abstract class Monster : MonoBehaviour
         obstacle.enabled = false;
         nav.enabled = true;
         nav.isStopped = false;
+        foreach (SkinnedMeshRenderer skin in skin)
+        {
+            skin.material.color = new Color(1, 1, 1, 1);
+        }
     }
 
     protected virtual void Update()
@@ -470,6 +476,20 @@ public abstract class Monster : MonoBehaviour
     public void Hurt(float damage)                   //플레이어에게 데미지 입을 시
     { 
         hp -= damage;
+        StartCoroutine(OnDamaged());
+    }
+
+    protected IEnumerator OnDamaged()
+    {
+        foreach (SkinnedMeshRenderer skin in skin)
+        {
+            skin.material.color = new Color(0, 0, 0, 1);
+        }
+        yield return new WaitForSeconds(0.2f);
+        foreach (SkinnedMeshRenderer skin in skin)
+        {
+            skin.material.color = new Color(1, 1, 1, 1);
+        }
     }
 
     public virtual void isDie()                              //죽었을 시
